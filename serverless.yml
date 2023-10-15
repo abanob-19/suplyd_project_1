@@ -1,0 +1,15 @@
+service: my-serverless-service
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello
+
+plugins:
+ - serverless-offline
